@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>AccurateMoney</title>
 </head>
+
 <body>
-    <header> AccurateMoney </header>
+    <header>
+        <div id="logo1"></div>
+        <div>
+            <h2>AccurateMoney</h2>
+        </div>
+        <div id="logo2"></div>
+    </header>
     <main>
-        <div>You currently have : <br> 
-        <div id="amount">unspecified</div>€</div>
+        <div id="moneycount">You currently have :
+            <div id="amountspace">
+                <div id="amount">138,79</div><div id="euro">€</div>
+            </div>
+        </div>
         <div id="spent">
-            <div>New spent</div>
+            <div>New spent :</div>
             <input type="number" name="new spent" id="spentInput">
-            <button id=spentButton> Add </button>
+            <button id=spentButton> ➕ </button>
         </div>
         <div id="income">
-            <div>New income</div>
+            <div>New income :</div>
             <input type="number" name="new income" id="incomeInput">
-            <button id=spentButton> Add </button>
+            <button id=spentButton> ➕ </button>
         </div>
-        
+        <div id="set">
+            <div>Set money :</div>
+            <input type="number" name="new money" id="moneyInput">
+            <button id=setButton> ↩ </button>
+        </div>
+
     </main>
 </body>
+
 </html>
