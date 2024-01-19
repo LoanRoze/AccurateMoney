@@ -9,7 +9,7 @@ header {
     justify-content: space-around;
     align-items: center;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 15px;
     width: 500px;
 }
 
@@ -47,7 +47,7 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 #moneycount {
@@ -57,7 +57,7 @@ main {
 }
 
 #spent {
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 200%;
 }
 
@@ -82,7 +82,7 @@ main {
 }
 
 #income {
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 200%;
 }
 
@@ -97,7 +97,7 @@ main {
 }
 
 #set {
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 200%;
 }
 
@@ -118,5 +118,95 @@ main {
 #amountspace {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 15px;
 }
+
+  
+  footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 79.9px;
+    height: 100px;
+    color: white;
+  }
+  
+  #homespace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    width: 100px;
+  }
+  
+  #homeicone {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(money.png);
+    background-position: 100%;
+    background-size: 100%;
+  }
+  
+  #cardsspace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    width: 100px;
+  }
+  
+  #cardsicone {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(cards.png);
+    background-position: 100%;
+    background-size: 100%;
+  }
+  
+  #graphespace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    width: 100px;
+  }
+  
+  #grapheicone {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(graphe.png);
+    background-position: 100%;
+    background-size: 100%;
+  }
+  
+  @keyframes grossissementcartes {
+    from {
+      width: 50px;
+      height: 50px;
+    }
+  
+    to {
+      width: 65px;
+      height: 65px;
+    }
+  }
+  
+  #grapheicone:hover {
+      cursor: pointer;
+      animation: grossissementcartes 2s forwards;
+  }
+  
+  #cardsicone:hover {
+      cursor: pointer;
+      animation: grossissementcartes 2s forwards;
+  }
+  
+  #homeicone:hover {
+      cursor: pointer;
+      animation: grossissementcartes 2s forwards;
+  }

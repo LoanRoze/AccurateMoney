@@ -9,7 +9,7 @@ header {
     justify-content: space-around;
     align-items: center;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 15px;
     width: 500px;
 }
 
@@ -45,7 +45,7 @@ h2 {
 #cardstext {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 40px;
     font-style: italic;
 }
@@ -60,7 +60,7 @@ main {
     overflow-x: auto;
     max-width: 350px;
     max-height: 600px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .wrapper::-webkit-scrollbar {
@@ -94,3 +94,92 @@ main {
     background-size: 175%;
     background-position: center;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: px;
+    height: 100px;
+    color: white;
+  }
+  
+  #homespace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    width: 100px;
+  }
+  
+  #homeicone {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(money.png);
+    background-position: 100%;
+    background-size: 100%;
+  }
+  
+  #cardsspace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    width: 100px;
+  }
+  
+  #cardsicone {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(cards.png);
+    background-position: 100%;
+    background-size: 100%;
+  }
+  
+  #graphespace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    width: 100px;
+  }
+  
+  #grapheicone {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(graphe.png);
+    background-position: 100%;
+    background-size: 100%;
+  }
+  
+  @keyframes grossissementcartes {
+    from {
+      width: 50px;
+      height: 50px;
+    }
+  
+    to {
+      width: 65px;
+      height: 65px;
+    }
+  }
+  
+  #grapheicone:hover {
+      cursor: pointer;
+      animation: grossissementcartes 2s forwards;
+  }
+  
+  #cardsicone:hover {
+      cursor: pointer;
+      animation: grossissementcartes 2s forwards;
+  }
+  
+  #homeicone:hover {
+      cursor: pointer;
+      animation: grossissementcartes 2s forwards;
+  }
