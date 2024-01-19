@@ -60,7 +60,7 @@ function decreaseMoney(decValue) {
   }
 }
 function setMoney(value) {
-  if ((regEx.test(addValue)) && (addValue != '')) {
+  if ((regEx.test(value)) && (value != '')) {
     moneyData[moneyData.length - 1].money = eval(value);
   } else {
     alert("Please put a value that is only numbers");
