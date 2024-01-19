@@ -28,7 +28,7 @@ h2 {
     display: flex;
     height: 100px;
     width: 100px;
-    background-image: url(money.gif);
+    background-image: url(../assets/money.gif);
     background-position: 100%;
     background-size: 100%;
 }
@@ -37,7 +37,7 @@ h2 {
     display: flex;
     height: 100px;
     width: 100px;
-    background-image: url(money.gif);
+    background-image: url(../assets/money.gif);
     background-position: 100%;
     background-size: 100%;
 }
@@ -78,19 +78,19 @@ main {
 }
 
 #item1 {
-    background-image: url(firstcard.png);
+    background-image: url(../assets/firstcard.png);
     background-size: 300%;
     background-position: 200%;
 }
 
 #item2 {
-    background-image: url(secondcard.png);
+    background-image: url(../assets/secondcard.png);
     background-size: 110%;
     background-position: 100%;
 }
 
 #item3 {
-    background-image: url(thirdcard.png);
+    background-image: url(../assets/thirdcard.png);
     background-size: 175%;
     background-position: center;
 }
@@ -116,7 +116,7 @@ footer {
     display: flex;
     width: 50px;
     height: 50px;
-    background-image: url(money.png);
+    background-image: url(../assets/money.png);
     background-position: 100%;
     background-size: 100%;
   }
@@ -134,7 +134,7 @@ footer {
     display: flex;
     width: 50px;
     height: 50px;
-    background-image: url(cards.png);
+    background-image: url(../assets/cards.png);
     background-position: 100%;
     background-size: 100%;
   }
@@ -152,7 +152,7 @@ footer {
     display: flex;
     width: 50px;
     height: 50px;
-    background-image: url(graphe.png);
+    background-image: url(../assets/graphe.png);
     background-position: 100%;
     background-size: 100%;
   }
