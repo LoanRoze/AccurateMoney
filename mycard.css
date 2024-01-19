@@ -41,3 +41,56 @@ h2 {
     background-position: 100%;
     background-size: 100%;
 }
+
+#cardstext {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-style: italic;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    overflow-x: auto;
+    max-width: 350px;
+    max-height: 600px;
+    margin-top: 50px;
+}
+
+.wrapper::-webkit-scrollbar {
+    width: 0;
+}
+
+.wrapper .item{
+    min-width: 230px;
+    height: 400;
+    line-height: 400px;
+    text-align: center;
+    background-color: gray;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#item1 {
+    background-image: url(firstcard.png);
+    background-size: 300%;
+    background-position: 200%;
+}
+
+#item2 {
+    background-image: url(secondcard.png);
+    background-size: 110%;
+    background-position: 100%;
+}
+
+#item3 {
+    background-image: url(thirdcard.png);
+    background-size: 175%;
+    background-position: center;
+}
