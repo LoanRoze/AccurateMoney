@@ -9,7 +9,7 @@ header {
     justify-content: space-around;
     align-items: center;
     margin: auto;
-    margin-top: 15px;
+    margin-top: 25px;
     width: 500px;
 }
 
@@ -55,3 +55,13 @@ main {
     font-size: 40px;
     text-align: center;
 }
+
+#screenspace {
+    display: flex;
+    width: 400px;
+    height: 300px;
+    margin-top: 60px;
+    border-radius: 10px;
+    border: 10px solid white;
+}
+
