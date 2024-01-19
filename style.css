@@ -8,11 +8,20 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: auto;
     margin-top: 20px;
+    width: 500px;
+}
+
+@keyframes bounce{
+    from {transform: translateY(0);}
+    to   {transform: translateY(-20px);}
 }
 
 h2 {
-    font-size: 250%;
+    margin-bottom: 10px;
+    animation: bounce 0.40s ease infinite alternate;
+    font-size: 260%;
 }
 
 #logo1 {
@@ -42,31 +51,72 @@ main {
 }
 
 #moneycount {
-    font-size: 30px;
+    font-style: italic;
+    font-size: 40px;
     text-align: center;
 }
 
 #spent {
     margin-top: 20px;
-    font-size: 150%;
+    font-size: 200%;
+}
+
+@keyframes grossissement {
+    from {
+        font-size: 65%;
+    }
+
+    to {
+        font-size: 80%;
+    }
+}
+
+#spentButton {
+    font-size: 20px;
+    border-radius: 100px;
+}
+
+#spentButton:hover {
+    background-color: green;
+    animation: grossissement 1s forwards;
 }
 
 #income {
     margin-top: 20px;
-    font-size: 150%;
+    font-size: 200%;
+}
+
+#incomeButton {
+    font-size: 20px;
+    border-radius: 100px;
+}
+
+#incomeButton:hover {
+    background-color: green;
+    animation: grossissement 2s forwards;
 }
 
 #set {
     margin-top: 20px;
-    font-size: 150%;
+    font-size: 200%;
+}
+
+#setButton {
+    font-size: 20px;
+    border-radius: 100px;
+}
+
+#setButton:hover {
+    background-color: green;
+    animation: grossissement 2s forwards;
 }
 
 #amount {
-    font-size: 50px;
+    font-size: 70px;
 }
 
 #amountspace {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
