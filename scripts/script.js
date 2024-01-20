@@ -1,9 +1,9 @@
 //On recupere le tableau stockée dans le localstorage
 let moneyData = JSON.parse(localStorage.getItem("money"));
-
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
 if (moneyData === null) {
     moneyData = [{
+        day: new Date().toLocaleDateString(),
         date: Math.floor(Date.now() / 86400000),
         money: 0
     }]
@@ -13,6 +13,7 @@ if (moneyData === null) {
 if (moneyData[0].date != Math.floor(Date.now() / 86400000)) {
     //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
     moneyData.push({
+        day: getDay(),
         date: Math.floor(Date.now() / 86400000),
         money: moneyData[0].money
     })
@@ -40,7 +41,6 @@ const regEx = /\d*/;
 setInterval(() => {
   localStorage.setItem("money", JSON.stringify(moneyData));
   amountInPage.textContent = moneyData[moneyData.length - 1].money;
-  console.log(moneyData);
 }, 100);
 
 

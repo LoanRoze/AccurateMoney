@@ -1,11 +1,11 @@
 const data = JSON.parse(localStorage.getItem("money"))
-const canva = document.querySelector("#canva")
+const canva = document.getElementById("canvas")
 let moneyList = []
 let daysList = []
 
 for (let index = 0; index < data.length; index++) {
     moneyList.push(data[index].money);
-    daysList.push(data[index].date)
+    daysList.push(data[index].day)
 }
 
 console.log(moneyList, daysList);
@@ -19,10 +19,10 @@ function createGraph(obj, data, values) {//obj : html item, data : graph values,
             labels: values,
             datasets: [{
                 data: data,
-                borderColor: "red",
+                borderColor: "#DAA520",
                 fill: true,
                 label: "money",
-                backgroundColor: "blue"
+                backgroundColor: "#F0E68C",
             },
         ]},
         options: {
@@ -34,7 +34,7 @@ function createGraph(obj, data, values) {//obj : html item, data : graph values,
                         display: true
                     },
                     ticks : {
-                        fontColor: "white"
+                        fontColor: "#2b2a27"
                     }
                 }],
                 yAxes: [{
@@ -43,7 +43,7 @@ function createGraph(obj, data, values) {//obj : html item, data : graph values,
                         display: true
                     },
                     ticks : {
-                        fontColor: "white"
+                        fontColor: "#2b2a27"
                     }
                 }]
             }

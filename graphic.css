@@ -62,12 +62,21 @@ main {
 
 #screenspace {
   display: flex;
-  width: 355px;
-  height: 300px;
+  width: 70%;
+  height: 50%;
   margin-top: 60px;
   border-radius: 10px;
-  border: 10px solid black;
+  border: 10px solid #2b2a27;
 }
+
+#canvasheight {
+  width: 100%;
+  height: fit-content;
+  background-color: #FAFAD2;
+}
+
+
+
 
 footer {
   display: flex;
