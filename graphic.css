@@ -9,8 +9,8 @@ header {
   justify-content: space-around;
   align-items: center;
   margin: auto;
-  margin-top: 25px;
-  width: 500px;
+  margin-top: 15px;
+  width: 100%px;
 }
 
 @keyframes bounce {
@@ -28,7 +28,7 @@ h2 {
   font-size: 260%;
 }
 
-#logo1 {
+/* #logo1 {
   display: flex;
   height: 100px;
   width: 100px;
@@ -44,7 +44,7 @@ h2 {
   background-image: url(./assets/money.gif);
   background-position: 100%;
   background-size: 100%;
-}
+} */
 
 main {
   display: flex;
@@ -62,7 +62,7 @@ main {
 
 #screenspace {
   display: flex;
-  width: 400px;
+  width: 355px;
   height: 300px;
   margin-top: 60px;
   border-radius: 10px;
@@ -75,6 +75,7 @@ footer {
   margin-top: 70px;
   height: 100px;
   color: black;
+  font-weight: bold;
 }
 
 #homespace {

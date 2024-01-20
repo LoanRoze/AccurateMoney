@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <script type="module" src="scripts/script.js" defer></script>
     <link rel="stylesheet" href="style/style.css">
     <title>AccurateMoney</title>
@@ -23,42 +23,51 @@
     <main>
         <div id="moneycount">Here's your Balance :
             <div id="amountspace">
-                <div id="amount"></div><div id="euro">€</div>
+                <div id="amount"></div>
+                <div id="euro">€</div>
             </div>
         </div>
         <div id="spent">
             <div>New spent :</div>
-            <input type="number" name="new spent" id="spentInput">
+            <input type="number" name="new spent" id="spentInput" inputmode="numeric">
             <button id=spentButton> ➕ </button>
         </div>
         <div id="income">
             <div>New income :</div>
-            <input type="number" name="new income" id="incomeInput">
+            <input type="number" name="new income" id="incomeInput" inputmode="numeric">
             <button id=incomeButton> ➕ </button>
         </div>
         <div id="set">
             <div>Set money :</div>
-            <input type="number" name="new money" id="setInput">
+            <input type="number" name="new money" id="setInput" inputmode="numeric">
             <button id=setButton> ↩ </button>
         </div>
     </main>
 
     <footer>
         <div id="homespace">
-            <a href="#"><div id="homeicone"></div></a>
-            <div id="homeelement">Accueil</div>
+            <a href="#">
+                <div id="homeicone"></div>
+            </a>
+            <div id="homeelement">Home</div>
         </div>
         <div id="cardsspace">
-            <a href="mycard.html"><div id="cardsicone"></div></a>
-            <div id="cardselement">Cartes</div>
+            <a href="mycard.html">
+                <div id="cardsicone"></div>
+            </a>
+            <div id="cardselement">Cards</div>
         </div>
         <div id="graphespace">
-            <a href="graphic.html"><div id="grapheicone"></div></a>
-            <div id="grapheelement">Graphiques</div>
+            <a href="graphic.html">
+                <div id="grapheicone"></div>
+            </a>
+            <div id="grapheelement">Statistics</div>
         </div>
         <div id="calculatorspace">
-            <a href="calculator.html"><div id="calculatoricone"></div></a>
-            <div id="grapheelement">Calculatrice</div>
+            <a href="calculator.html">
+                <div id="calculatoricone"></div>
+            </a>
+            <div id="grapheelement">Calculator</div>
         </div>
     </footer>
 
