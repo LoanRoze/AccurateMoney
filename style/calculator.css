@@ -46,86 +46,63 @@ h2 {
   background-size: 100%;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 15px;
-}
-
 #moneycount {
   font-style: italic;
   font-size: 40px;
   text-align: center;
+  margin-top: 10px;
 }
 
-#spent {
-  margin-top: 15px;
-  font-size: 200%;
+main {
+    margin-top: 50px;
 }
 
-@keyframes grossissement {
-  from {
-    font-size: 65%;
-  }
-
-  to {
-    font-size: 75%;
-  }
-}
-
-#spentButton {
-  font-size: 20px;
-  border-radius: 100px;
-}
-
-#spentButton:hover {
-  animation: grossissement 0.5s forwards;
-}
-
-#income {
-  margin-top: 15px;
-  font-size: 200%;
-}
-
-#incomeButton {
-  font-size: 20px;
-  border-radius: 100px;
-}
-
-#incomeButton:hover {
-  animation: grossissement 0.5s forwards;
-}
-
-#set {
-  margin-top: 15px;
-  font-size: 200%;
-}
-
-#setButton {
-  font-size: 20px;
-  border-radius: 100px;
-}
-
-#setButton:hover {
-  animation: grossissement 0.5s forwards;
-}
-
-#amount {
-  font-size: 70px;
-}
-
-#amountspace {
-  display: flex;
+.grid-container {
+  display: grid;
+  align-items: center;
   justify-content: center;
-  margin-top: 15px;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 1px;
+  background-color: black;
+}
+
+.calculator-grid button {
+  font-size: 25px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: "DM Mono", monospace;
+}
+
+textarea {
+  grid-column: span 4;
+  font-size: 25px;
+  text-align: end;
+  background-color: rgb(55, 183, 55);
+  padding: 5px;
+  border: none;
+}
+
+.calculator-grid button:nth-child(n + 18) {
+  background-color: rgb(55, 183, 55);
+}
+
+button:hover,
+.calculator-grid button:nth-child(n + 18):hover {
+  background-color: rgb(55, 183, 55);
+  color: white;
+  transition: 0.2s;
 }
 
 footer {
   display: flex;
   justify-content: center;
-  margin-top: 79.9px;
+  margin-top: px;
   height: 100px;
   color: white;
 }

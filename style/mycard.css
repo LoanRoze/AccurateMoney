@@ -161,6 +161,24 @@ footer {
   background-size: 100%;
 }
 
+#calculatorspace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+  width: 100px;
+}
+
+#calculatoricone {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background-image: url(../assets/calculator.png);
+  background-position: 100%;
+  background-size: 100%;
+}
+
 @keyframes grossissementcartes {
   from {
     width: 50px;
@@ -184,6 +202,11 @@ footer {
 }
 
 #homeicone:hover {
+  cursor: pointer;
+  animation: grossissementcartes 0.8s forwards;
+}
+
+#calculatoricone:hover {
   cursor: pointer;
   animation: grossissementcartes 0.8s forwards;
 }
