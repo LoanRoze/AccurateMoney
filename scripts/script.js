@@ -1,7 +1,11 @@
 //On recupere le tableau stockée dans le localstorage
 let moneyData = JSON.parse(localStorage.getItem("money"));
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
-if (moneyData === null) {
+//VALEURS A SUPPRIMER ICI APRES PREMIERE UTILISATION
+moneyData = null
+//FIN DES VALEURS A SUPPRIMER
+
+if ((moneyData === null)) {
     moneyData = [{
         day: new Date().toLocaleDateString(),
         date: Math.floor(Date.now() / 86400000),
@@ -13,7 +17,7 @@ if (moneyData === null) {
 if (moneyData[0].date != Math.floor(Date.now() / 86400000)) {
     //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
     moneyData.push({
-        day: getDay(),
+        day: new Date().toLocaleDateString(),
         date: Math.floor(Date.now() / 86400000),
         money: moneyData[0].money
     })
@@ -22,11 +26,6 @@ if (moneyData[0].date != Math.floor(Date.now() / 86400000)) {
         moneyData.shift()
     }
 }
-
-
-
-
-console.log(moneyData);
 
 const spentInput = document.getElementById("spentInput");
 const incomeInput = document.getElementById("incomeInput");
