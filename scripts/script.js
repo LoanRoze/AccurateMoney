@@ -2,6 +2,7 @@
 let moneyData = JSON.parse(localStorage.getItem("money"));
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
 
+
 if ((moneyData === null)) {
     moneyData = [{
         day: new Date().toLocaleDateString(),
