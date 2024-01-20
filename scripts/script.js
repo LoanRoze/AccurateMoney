@@ -1,9 +1,7 @@
 //On recupere le tableau stockée dans le localstorage
 let moneyData = JSON.parse(localStorage.getItem("money"));
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
-//VALEURS A SUPPRIMER ICI APRES PREMIERE UTILISATION
-moneyData = null
-//FIN DES VALEURS A SUPPRIMER
+
 
 if ((moneyData === null)) {
     moneyData = [{
