@@ -1,5 +1,5 @@
 body {
-  color: white;
+  color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: rgb(54, 54, 54);
 }
@@ -51,6 +51,7 @@ main {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  min-height: 440px;
   margin-top: 15px;
 }
 
@@ -125,9 +126,9 @@ main {
 footer {
   display: flex;
   justify-content: center;
-  margin-top: 79.9px;
+  margin-top: 60px;
   height: 100px;
-  color: white;
+  color: black;
 }
 
 #homespace {
@@ -232,4 +233,16 @@ footer {
 #calculatoricone:hover {
   cursor: pointer;
   animation: grossissementcartes 0.8s forwards;
+}
+
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
