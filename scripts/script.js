@@ -1,8 +1,18 @@
+//Initialisation des variables relatives au html
+const spentInput = document.getElementById("spentInput");
+const incomeInput = document.getElementById("incomeInput");
+const spentButton = document.getElementById("spentButton");
+const incomeButton = document.getElementById("incomeButton");
+const setButton = document.getElementById("setButton");
+const setInput = document.getElementById("setInput");
+
+//variables utiles au code
+const amountInPage = document.getElementById("amount");
+const regEx = /\d*/;
 //On recupere le tableau stockée dans le localstorage
 let moneyData = JSON.parse(localStorage.getItem("money"));
+
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
-
-
 if ((moneyData === null)) {
     moneyData = [{
         day: new Date().toLocaleDateString(),
@@ -12,7 +22,7 @@ if ((moneyData === null)) {
 }
 
 //On verifie si ça fait plus d'un jour que la derniere connexion au site s'est fait
-if (moneyData[0].date != Math.floor(Date.now() / 86400000)) {
+if (moneyData[moneyData.lenght() - 1].date != Math.floor(Date.now() / 86400000)) {
     //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
     moneyData.push({
         day: new Date().toLocaleDateString(),
@@ -25,26 +35,15 @@ if (moneyData[0].date != Math.floor(Date.now() / 86400000)) {
     }
 }
 
-const spentInput = document.getElementById("spentInput");
-const incomeInput = document.getElementById("incomeInput");
-const spentButton = document.getElementById("spentButton");
-const incomeButton = document.getElementById("incomeButton");
-const setButton = document.getElementById("setButton");
-const setInput = document.getElementById("setInput");
-
-const amountInPage = document.getElementById("amount");
-const regEx = /\d*/;
-
-setInterval(() => {
+//Les fonctions qu'on appelle quand on appuie sur les boutons
+function updateMoney() {
   localStorage.setItem("money", JSON.stringify(moneyData));
   amountInPage.textContent = moneyData[moneyData.length - 1].money;
-}, 100);
-
-
-
+}
 function addMoney(addValue) {
   if ((regEx.test(addValue)) && (addValue != '')) {
     moneyData[moneyData.length - 1].money += eval(addValue);
+    updateMoney()
   } else {
     alert("Please put a value that is only numbers");
   }
@@ -52,6 +51,7 @@ function addMoney(addValue) {
 function decreaseMoney(decValue) {
   if ((regEx.test(decValue)) && (decValue != '')) {
     moneyData[moneyData.length - 1].money -= eval(decValue);
+    updateMoney()
   } else {
     alert("Please put a value that is only numbers");
   }
@@ -59,11 +59,13 @@ function decreaseMoney(decValue) {
 function setMoney(value) {
   if ((regEx.test(value)) && (value != '')) {
     moneyData[moneyData.length - 1].money = eval(value);
+    updateMoney()
   } else {
     alert("Please put a value that is only numbers");
   }
 }
 
+//Les evenements de click sur les boutons
 spentButton.addEventListener("click", () => {
   decreaseMoney(spentInput.value);
   spentInput.value = "";
