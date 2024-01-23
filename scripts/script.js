@@ -12,6 +12,8 @@ const regEx = /\d*/;
 //On recupere le tableau stockée dans le localstorage
 let moneyData = JSON.parse(localStorage.getItem("money"));
 
+updateMoney()
+
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
 if ((moneyData === null)) {
   moneyData = [{
