@@ -13,3 +13,11 @@
 - Un onglet qui nous montre un graph des derniers 7 jours ou on s'est connectés au site.
 - Une calculatrice pipou super simple a utiliser.
 - Une ardoise ou on peut ajouter ce qu'on doit et a qui et qui nous doit quoi.
+
+## Notre Site :
+
+**[Accurate Money](https://accuratemoney.netlify.app)**
+
+### Colaborateurs :
+- Loan Roze
+- Ryan Valery

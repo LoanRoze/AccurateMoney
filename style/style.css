@@ -11,7 +11,7 @@ header {
   align-items: center;
   margin: auto;
   margin-top: 15px;
-  width: 100%px;
+  width: 100%;
 }
 
 @keyframes bounce {
@@ -79,12 +79,37 @@ main {
 }
 
 #spentButton {
+  background-color: white;
   font-size: 20px;
   border-radius: 100px;
+  border: 3px solid pink;
 }
 
 #spentButton:hover {
-  animation: grossissement 0.5s forwards;
+  background-color: pink;
+  animation: grossissement 0.3s forwards;
+}
+
+#spentButton:active, #incomeButton:active, #setButton:active {
+  border: 3px solid white;
+}
+
+#spentInput {
+  font-size: 50%;
+  border: 3px solid pink;
+  border-radius: 10px;
+}
+
+#incomeInput {
+  font-size: 50%;
+  border: 3px solid pink;
+  border-radius: 10px;
+}
+
+#setInput {
+  font-size: 50%;
+  border: 3px solid pink;
+  border-radius: 10px;
 }
 
 #income {
@@ -93,12 +118,15 @@ main {
 }
 
 #incomeButton {
+  background-color: white;
   font-size: 20px;
   border-radius: 100px;
+  border: 3px solid pink;
 }
 
 #incomeButton:hover {
-  animation: grossissement 0.5s forwards;
+  background-color: pink;
+  animation: grossissement 0.3s forwards;
 }
 
 #set {
@@ -107,12 +135,15 @@ main {
 }
 
 #setButton {
+  background-color: white;
   font-size: 20px;
   border-radius: 100px;
+  border: 3px solid pink;
 }
 
 #setButton:hover {
-  animation: grossissement 0.5s forwards;
+  background-color: pink;
+  animation: grossissement 0.3s forwards;
 }
 
 #amount {

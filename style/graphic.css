@@ -100,7 +100,7 @@ footer {
   display: flex;
   width: 50px;
   height: 50px;
-  background-image: url(./assets/money.png);
+  background-image: url(../assets/money.png);
   background-position: 100%;
   background-size: 100%;
 }
@@ -118,7 +118,7 @@ footer {
   display: flex;
   width: 50px;
   height: 50px;
-  background-image: url(./assets/cards.png);
+  background-image: url(../assets/cards.png);
   background-position: 100%;
   background-size: 100%;
 }
@@ -136,7 +136,7 @@ footer {
   display: flex;
   width: 50px;
   height: 50px;
-  background-image: url(./assets/graphe.png);
+  background-image: url(../assets/graphe.png);
   background-position: 100%;
   background-size: 100%;
 }
@@ -154,7 +154,7 @@ footer {
   display: flex;
   width: 50px;
   height: 50px;
-  background-image: url(./assets/calculator.png);
+  background-image: url(../assets/calculator.png);
   background-position: 100%;
   background-size: 100%;
 }

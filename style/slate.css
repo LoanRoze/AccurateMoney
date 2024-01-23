@@ -1,0 +1,94 @@
+body {
+  color: black;
+  justify-content: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-image: url(../assets/background.mp4);
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  margin-top: 15px;
+  width: 100%px;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+h2 {
+  margin-bottom: 10px;
+  animation: bounce 0.4s ease infinite alternate;
+  font-size: 260%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  min-width: 100%;
+}
+
+#moneycount {
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+}
+
+#slatespace {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  min-width: 400px;
+  min-height: 250px;
+  background-image: url(../assets/slate.jpeg);
+  background-position: center;
+  background-size: 120%;
+  border-radius: 20px;
+  border: 7px solid pink;
+}
+
+#task {
+  margin-top: 15px;
+  font-size: 250%;
+}
+
+#taskInput {
+  font-size: 50%;
+  border: 5px solid pink;
+  border-radius: 10px;
+}
+
+@keyframes grossissement {
+  from {
+    font-size: 65%;
+  }
+
+  to {
+    font-size: 75%;
+  }
+}
+
+#addButton {
+  background-color: white;
+  font-size: 20px;
+  border-radius: 100px;
+  border: 2px solid pink;
+}
+
+#addButton:hover {
+  animation: grossissement 0.3s forwards;
+  background-color: pink;
+}
