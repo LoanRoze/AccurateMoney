@@ -14,26 +14,27 @@ let moneyData = JSON.parse(localStorage.getItem("money"));
 
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
 if ((moneyData === null)) {
-    moneyData = [{
-        day: new Date().toLocaleDateString(),
-        date: Math.floor(Date.now() / 86400000),
-        money: 0
-    }]
+  moneyData = [{
+    day: new Date().toLocaleDateString(),
+    date: Math.floor(Date.now() / 86400000),
+    money: 0
+  }]
 }
 
 //On verifie si ça fait plus d'un jour que la derniere connexion au site s'est fait
-if (moneyData[moneyData.lenght - 1].date != Math.floor(Date.now() / 86400000)) {
+if (moneyData[moneyData.length - 1].date != Math.floor(Date.now() / 86400000)) {
     //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
     moneyData.push({
         day: new Date().toLocaleDateString(),
         date: Math.floor(Date.now() / 86400000),
-        money: moneyData[0].money
+        money: moneyData[moneyData.length - 1].money
     })
     //On supprime le json d'il y a 8 jours si besoin
-    if (moneyData.lenght > 8) {
+    if (moneyData.length > 8) {
         moneyData.shift()
     }
 }
+
 
 //Les fonctions qu'on appelle quand on appuie sur les boutons
 function updateMoney() {
