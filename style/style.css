@@ -79,12 +79,15 @@ main {
 }
 
 #spentButton {
+  background-color: white;
   font-size: 20px;
   border-radius: 100px;
+  border: 2px solid pink;
 }
 
 #spentButton:hover {
-  animation: grossissement 0.5s forwards;
+  background-color: pink;
+  animation: grossissement 0.3s forwards;
 }
 
 #income {
@@ -93,12 +96,15 @@ main {
 }
 
 #incomeButton {
+  background-color: white;
   font-size: 20px;
   border-radius: 100px;
+  border: 2px solid pink;
 }
 
 #incomeButton:hover {
-  animation: grossissement 0.5s forwards;
+  background-color: pink;
+  animation: grossissement 0.3s forwards;
 }
 
 #set {
@@ -107,12 +113,15 @@ main {
 }
 
 #setButton {
+  background-color: white;
   font-size: 20px;
   border-radius: 100px;
+  border: 2px solid pink;
 }
 
 #setButton:hover {
-  animation: grossissement 0.5s forwards;
+  background-color: pink;
+  animation: grossissement 0.3s forwards;
 }
 
 #amount {
