@@ -14,6 +14,11 @@ main {
   text-align: center;
 }
 
+#amountspace {
+  display: flex;
+  justify-content: center;
+}
+
 #spent {
   margin-top: 15px;
   font-size: 200%;
