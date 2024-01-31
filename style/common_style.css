@@ -64,7 +64,9 @@ footer {
   font-weight: bold;
 }
 
-#homespace, #cardsspace, #graphespace, #calculatorspace {
+#homespace, #cardsspace, 
+#graphespace, #calculatorspace,
+#historiquespace, #slatespace {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +88,15 @@ footer {
 #calculatoricone {
     background-image: url(../assets/calculator.png);
 }
-#homeicone, #cardsicone, #grapheicone, #calculatoricone {
+#historyicone {
+    background-image: url(../assets/history.png);
+}
+#slateicone {
+    background-image: url(../assets/slate.png);
+}
+#homeicone, #cardsicone, 
+#grapheicone, #calculatoricone, 
+#historyicone, #slateicone {
   display: flex;
   width: 50px;
   height: 50px;
@@ -106,7 +116,9 @@ footer {
   }
 }
 
-#homeicone:hover, #cardsicone:hover, #grapheicone:hover, #calculatoricone:hover {
+#homeicone:hover, #cardsicone:hover, 
+#grapheicone:hover, #calculatoricone:hover, 
+#historyicone:hover, #slateicone:hover {
   cursor: pointer;
   animation: grossissementcartes 0.8s forwards;
 }
