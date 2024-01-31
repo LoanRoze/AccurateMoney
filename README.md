@@ -1,6 +1,6 @@
 # Accurate Money
 
-## Bienvenue dans notre tout nouveau projet "Accurate Money" composé par votre team de devs préférés : Ryan et Loan !!
+## Bienvenue dans notre tout nouveau projet "Accurate Money" composé par votre team de devs préférés : Les TechTwins !!
 
 ### Notre Projet consiste à aider quiconque ayant des problemes a suivre son argent. On a remarqué que 80% des gens sont plus dépensiers si ils n'ont pas de suivi de leurs argent. C'est pour cette raison qu'on a décidé de lancer ce projet innovant.
 
@@ -9,10 +9,11 @@
 
 # Ce que notre projet contient :
 - L'outil de base de suivi avec un compteur de notre argent actuel
-- Un onglet sur lequel on peut enregistrer nos cartes banquaires pour toujours avoir ces numéros si longs sur soit
+- Un onglet nous permettant de voir nos dernières dépenses enregistrées, pour les étourdis
+- Un onglet sur lequel on peut enregistrer nos cartes banquaires pour toujours avoir ces numéros si longs sur soi.
 - Un onglet qui nous montre un graph des derniers 7 jours ou on s'est connectés au site.
 - Une calculatrice pipou super simple a utiliser.
-- Une ardoise ou on peut ajouter ce qu'on doit et a qui et qui nous doit quoi.
+- Une ardoise ou on peut ajouter ce qu'on doit a qui et qui nous doit quoi.
 
 ## Notre Site :
 
