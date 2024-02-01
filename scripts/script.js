@@ -67,8 +67,7 @@ function updateHistory() {
 function addMoney(addValue) {
   if ((regEx.test(addValue)) && (addValue != '')) {
     let messageText = prompt("Reason to declare :").replace(regEx2)
-    console.log(messageText);
-    if (messageText === "" || messageText.match(regEx2)) {
+    if (messageText === "") {
       messageText = "Nothing declared"
     }
     historyData.push({
