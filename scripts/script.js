@@ -5,6 +5,7 @@ const spentButton = document.getElementById("spentButton");
 const incomeButton = document.getElementById("incomeButton");
 const setButton = document.getElementById("setButton");
 const setInput = document.getElementById("setInput");
+const resetButton = document.getElementById("resetButton")
 
 //variables utiles au code
 const amountInPage = document.getElementById("amount");
@@ -155,3 +156,9 @@ setInput.addEventListener("keydown", (event) => {
   }
 });
 
+resetButton.addEventListener("click", () => {
+  if (confirm("You're about to entirely reset your money")) {
+    moneyData[moneyData.length - 1].money = 0
+    updateMoney()
+  }
+})
