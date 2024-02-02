@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="scripts/verifile.js" defer></script>
+    <script src="scripts/slate.js" defer></script>
     <link rel="stylesheet" href="./style/common_style.css">
     <link rel="stylesheet" href="./style/slate.css">
     <title>AccurateMoney</title>
@@ -20,10 +21,15 @@
 
     <main>
         <div id="moneycount">Here's your Tasks :</div>
-        <div id="slatespace"></div>
+        <div id="slatespace">
+          <ul id="tasks">
+
+          </ul>
+        </div>
         <div id="task">
             <div>New task :</div>
-            <input type="text" name="new task" id="taskInput">
+            <input type="text" name="new task" id="taskNameInput">
+            <input type="number" name="new task" id="taskAmountInput">
             <button id=addButton> ➕ </button>
         </div>
     </main>
