@@ -4,7 +4,7 @@ const index = document.getElementById("homespace")
 const mycard = document.getElementById("cardsspace")
 const graphic = document.getElementById("graphespace")
 const calculator = document.getElementById("calculatorspace")
-const history = document.getElementById("homespace")
+const history = document.getElementById("historiquepage")
 const slate = document.getElementById("homespace")
 
 
