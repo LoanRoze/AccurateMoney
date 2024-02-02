@@ -28,7 +28,7 @@ main {
   font-size: 200%;
 }
 
-#taskInput {
+#taskAmountInput, #taskNameInput {
   font-size: 50%;
   border: 5px solid pink;
   border-radius: 10px;
