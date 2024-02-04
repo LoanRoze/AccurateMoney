@@ -10,6 +10,12 @@ let tasksData = JSON.parse(localStorage.getItem("tasks"));
 let personData = [];
 let amountAfter = 0;
 
+//Création de la donnée si innexistante
+if (tasksData === null) {
+  tasksData = [];
+  localStorage.setItem("tasks", JSON.stringify(tasksData));
+}
+
 function updatePerson() {
   for (let elem = 0; elem < tasksData.length; elem++) {
     const element = tasksData[elem].name;
@@ -65,11 +71,7 @@ function updateTaskOnPage() {
   }
 }
 
-//Création de la donnée si innexistante
-if (tasksData === null) {
-  tasksData = [];
-  localStorage.setItem("tasks", JSON.stringify(tasksData));
-}
+
 
 //Mise à jour des tasks sur la page
 updateTaskOnPage();

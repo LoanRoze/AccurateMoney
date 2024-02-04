@@ -51,7 +51,8 @@ h2 {
 body {
   color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: rgb(54, 54, 54);
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(198,150,201,1) 0%, rgba(192,152,203,1) 37%, rgba(212,134,233,1) 47%, rgba(153,216,235,1) 78%, rgba(216,244,250,1) 100%);
 }
 
 /* foot part */
