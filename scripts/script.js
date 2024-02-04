@@ -5,58 +5,62 @@ const spentButton = document.getElementById("spentButton");
 const incomeButton = document.getElementById("incomeButton");
 const setButton = document.getElementById("setButton");
 const setInput = document.getElementById("setInput");
-const resetButton = document.getElementById("resetButton")
+const resetButton = document.getElementById("resetButton");
 
 //variables utiles au code
 const amountInPage = document.getElementById("amount");
+const deptsInPage = document.getElementById("depts");
 const regEx = /\d*/;
-const regEx2 = "\s*";
+const regEx2 = "s*";
 
 //On recupere le tableau stockée dans le localstorage
 let moneyData = JSON.parse(localStorage.getItem("money"));
-let historyData = JSON.parse(localStorage.getItem("history"))
-let currentVersion = 2
-
-//On met a jour en chargeant la page
-updateMoney()
+let historyData = JSON.parse(localStorage.getItem("history"));
+let deptsData = JSON.parse(localStorage.getItem("amountAfter"));
+let currentVersion = 2;
 
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
-if ((moneyData === null || moneyData[0].version != currentVersion)) {
-  moneyData = [{
-    day: new Date().toLocaleDateString(),
-    date: Math.floor(Date.now() / 86400000),
-    money: 0,
-    version: currentVersion
-  }]
-  updateMoney()
+if (moneyData === null || moneyData[0].version != currentVersion) {
+  moneyData = [
+    {
+      day: new Date().toLocaleDateString(),
+      date: Math.floor(Date.now() / 86400000),
+      money: 0,
+      version: currentVersion,
+    },
+  ];
 }
+
+//On met a jour en chargeant la page
+updateMoney();
 
 //De meme pour l'historique
 if (historyData === null) {
-  historyData = []
-  updateHistory()
+  historyData = [];
+  updateHistory();
 }
 
 //On verifie si ça fait plus d'un jour que la derniere connexion au site s'est fait
 if (moneyData[moneyData.length - 1].date != Math.floor(Date.now() / 86400000)) {
-    //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
-    moneyData.push({
-        day: new Date().toLocaleDateString(),
-        date: Math.floor(Date.now() / 86400000),
-        money: moneyData[moneyData.length - 1].money,
-        version: currentVersion
-    })
-    //On supprime le json d'il y a 8 jours si besoin
-    if (moneyData.length > 8) {
-        moneyData.shift()
-    }
+  //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
+  moneyData.push({
+    day: new Date().toLocaleDateString(),
+    date: Math.floor(Date.now() / 86400000),
+    money: moneyData[moneyData.length - 1].money,
+    version: currentVersion,
+  });
+  //On supprime le json d'il y a 8 jours si besoin
+  if (moneyData.length > 8) {
+    moneyData.shift();
+  }
 }
-
 
 //Des fonctions qui mettent a jour les données dans le local storage
 function updateMoney() {
   localStorage.setItem("money", JSON.stringify(moneyData));
   amountInPage.textContent = moneyData[moneyData.length - 1].money;
+  localStorage.setItem("amountAfter", JSON.stringify(deptsData));
+  deptsInPage.textContent = deptsData;
 }
 function updateHistory() {
   localStorage.setItem("history", JSON.stringify(historyData));
@@ -66,20 +70,20 @@ function updateHistory() {
 
 //Augmenter l'argent de addValue
 function addMoney(addValue) {
-  if ((regEx.test(addValue)) && (addValue != '')) {
-    let messageText = prompt("Reason to declare :").replace(regEx2)
+  if (regEx.test(addValue) && addValue != "") {
+    let messageText = prompt("Reason to declare :").replace(regEx2);
     if (messageText === "") {
-      messageText = "Nothing declared"
+      messageText = "Nothing declared";
     }
     historyData.push({
       message: messageText,
       moneyChange: "+" + addValue,
-      date: new Date().toLocaleDateString()
-    })
-    updateHistory()
-    
+      date: new Date().toLocaleDateString(),
+    });
+    updateHistory();
+
     moneyData[moneyData.length - 1].money += eval(addValue);
-    updateMoney()
+    updateMoney();
   } else {
     alert("Please put a value that is only numbers");
   }
@@ -87,20 +91,20 @@ function addMoney(addValue) {
 
 //Baisser l'argent de decValue
 function decreaseMoney(decValue) {
-  if ((regEx.test(decValue)) && (decValue != '')) {
-    let messageText = prompt("Reason to declare :").replace(regEx2)
+  if (regEx.test(decValue) && decValue != "") {
+    let messageText = prompt("Reason to declare :").replace(regEx2);
     if (messageText === "") {
-      messageText = "Nothing declared"
+      messageText = "Nothing declared";
     }
     historyData.push({
       message: messageText,
       moneyChange: "-" + decValue,
-      date: new Date().toLocaleDateString()
-    })
-    updateHistory()
+      date: new Date().toLocaleDateString(),
+    });
+    updateHistory();
 
     moneyData[moneyData.length - 1].money -= eval(decValue);
-    updateMoney()
+    updateMoney();
   } else {
     alert("Please put a value that is only numbers");
   }
@@ -108,9 +112,9 @@ function decreaseMoney(decValue) {
 
 //Fonction qui met a jour l'argent a value
 function setMoney(value) {
-  if ((regEx.test(value)) && (value != '')) {
+  if (regEx.test(value) && value != "") {
     moneyData[moneyData.length - 1].money = eval(value);
-    updateMoney()
+    updateMoney();
   } else {
     alert("Please put a value that is only numbers");
   }
@@ -157,8 +161,21 @@ setInput.addEventListener("keydown", (event) => {
 });
 
 resetButton.addEventListener("click", () => {
-  if (confirm("You're about to entirely reset your money")) {
-    moneyData[moneyData.length - 1].money = 0
-    updateMoney()
+  if (
+    confirm("You're about to entirely reset your money and the datas related")
+  ) {
+    moneyData = [
+      {
+        day: new Date().toLocaleDateString(),
+        date: Math.floor(Date.now() / 86400000),
+        money: 0,
+        version: currentVersion,
+      },
+    ];
+    historyData = [];
+    localStorage.setItem("tasks", JSON.stringify([]));
+    deptsData = 0;
+    updateHistory();
+    updateMoney();
   }
-})
+});
