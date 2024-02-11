@@ -32,7 +32,8 @@ function updateHistoryOnPage() {
     li.appendChild(button);
 
     //On ajoute tout dans ul
-    listeHistory.appendChild(li);
+    listeHistory.insertBefore(li, listeHistory.childNodes[0])
+    // listeHistory.appendChild(li);
   }
 }
 
