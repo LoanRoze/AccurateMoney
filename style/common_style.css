@@ -51,8 +51,10 @@ h2 {
 body {
   color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(198,150,201,1) 0%, rgba(192,152,203,1) 37%, rgba(212,134,233,1) 47%, rgba(153,216,235,1) 78%, rgba(216,244,250,1) 100%);
+  background-image: url(../assets/AccuratemoneyBackground.png);
+  background-size: auto;
+  background-attachment: fixed;
+  /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(198,150,201,1) 0%, rgba(192,152,203,1) 37%, rgba(212,134,233,1) 47%, rgba(153,216,235,1) 78%, rgba(216,244,250,1) 100%); */
 }
 
 /* foot part */
@@ -71,9 +73,12 @@ footer {
   }
 }
 
-#homespace, #cardsspace, 
-#graphespace, #calculatorspace,
-#historiquespace, #slatespace {
+#homespace,
+#cardsspace,
+#graphespace,
+#calculatorspace,
+#historiquespace,
+#slatespace {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,29 +87,31 @@ footer {
   width: 100px;
 }
 
-
 #homeicone {
-    background-image: url(../assets/money.png);
+  background-image: url(../assets/money.png);
 }
 #cardsicone {
-    background-image: url(../assets/cards.png);
+  background-image: url(../assets/cards.png);
 }
 #grapheicone {
-    background-image: url(../assets/graphe.png);
+  background-image: url(../assets/graphe.png);
 }
 #calculatoricone {
-    background-image: url(../assets/calculator.png);
+  background-image: url(../assets/calculator.png);
 }
 #historyicone {
-    background-image: url(../assets/history.png);
+  background-image: url(../assets/history.png);
 }
 #slateicone {
-    background-image: url(../assets/slate.png);
+  background-image: url(../assets/slate.png);
 }
 
-#homeicone, #cardsicone, 
-#grapheicone, #calculatoricone, 
-#historyicone, #slateicone {
+#homeicone,
+#cardsicone,
+#grapheicone,
+#calculatoricone,
+#historyicone,
+#slateicone {
   display: flex;
   width: 50px; /* Taille par défaut */
   height: 50px; /* Taille par défaut */
@@ -114,7 +121,12 @@ footer {
 
 /* Media query pour les écrans de petite taille */
 @media screen and (max-width: 480px) {
-  #homeicone, #cardsicone, #grapheicone, #calculatoricone, #historyicone, #slateicone {
+  #homeicone,
+  #cardsicone,
+  #grapheicone,
+  #calculatoricone,
+  #historyicone,
+  #slateicone {
     width: 38px; /* Taille réduite pour les petits écrans */
     height: 38px; /* Taille réduite pour les petits écrans */
   }
@@ -132,17 +144,23 @@ footer {
   }
 }
 
-#homeicone:hover, #cardsicone:hover, 
-#grapheicone:hover, #calculatoricone:hover, 
-#historyicone:hover, #slateicone:hover {
+#homeicone:hover,
+#cardsicone:hover,
+#grapheicone:hover,
+#calculatoricone:hover,
+#historyicone:hover,
+#slateicone:hover {
   cursor: pointer;
-  transform: scale(1.20);
+  transform: scale(1.2);
   transition: transform 0.3s ease-in-out;
 }
 
-#homeicone:not(:hover), #cardsicone:not(:hover), 
-#grapheicone:not(:hover), #calculatoricone:not(:hover), 
-#historyicone:not(:hover), #slateicone:not(:hover) {
+#homeicone:not(:hover),
+#cardsicone:not(:hover),
+#grapheicone:not(:hover),
+#calculatoricone:not(:hover),
+#historyicone:not(:hover),
+#slateicone:not(:hover) {
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
