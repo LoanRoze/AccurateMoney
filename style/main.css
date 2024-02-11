@@ -19,6 +19,13 @@ main {
   justify-content: center;
 }
 
+#deptspace {
+  display: flex;
+  align-items: end;
+  margin-left: 5px;
+  font-size: 30px;
+}
+
 #spent {
   margin-top: 15px;
   font-size: 200%;
