@@ -61,6 +61,12 @@ function updateMoney() {
   amountInPage.textContent = moneyData[moneyData.length - 1].money;
   localStorage.setItem("amountAfter", JSON.stringify(deptsData));
   deptsInPage.textContent = deptsData;
+  if (deptsData < 0) {
+    deptsInPage.style.color = "red";
+  }
+  if (deptsData > 0) {
+    deptsInPage.style.color = "green";
+  }
 }
 function updateHistory() {
   localStorage.setItem("history", JSON.stringify(historyData));
