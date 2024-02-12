@@ -42,7 +42,8 @@ h2 {
 }
 
 @media screen and (max-width: 480px) {
-  #moneylogo1, #moneylogo2 {
+  #moneylogo1,
+  #moneylogo2 {
     width: 30px;
     height: 30px;
   }
