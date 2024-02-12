@@ -18,11 +18,17 @@ main {
   height: 50%;
   margin-top: 60px;
   border-radius: 10px;
-  border: 10px solid #2b2a27;
+  border: 10px solid pink;
 }
 
 #canvasheight {
   width: 100%;
   height: fit-content;
   background-color: #FAFAD2;
+}
+
+@media (prefers-color-scheme: dark) {
+  #screenspace {
+    border: 10px solid rgb(78, 113, 218);
+  }
 }
