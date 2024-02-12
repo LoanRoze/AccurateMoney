@@ -7,19 +7,22 @@ main {
   min-width: 100%;
 }
 
-#slatespaces {
+.wrapper {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-width: 25%;
-  height: 250px;
-  background-image: url(../assets/slate.avif);
-  background-size: auto;
-  background-attachment: local;
-  border-radius: 10px;
+  overflow-x: auto;
+  max-height: 300px;
+  min-height: 300px;
+  max-width: 300px;
+  margin-top: 30px;
   border: 5px solid pink;
+  border-radius: 10px;
+}
+
+#tasks {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  max-height: 300px;
 }
 
 #task {
@@ -27,7 +30,8 @@ main {
   font-size: 200%;
 }
 
-#taskAmountInput, #taskNameInput {
+#taskAmountInput,
+#taskNameInput {
   font-size: 50%;
   border: 5px solid pink;
   border-radius: 10px;
@@ -53,4 +57,18 @@ main {
 #addButton:hover {
   animation: grossissement 0.3s forwards;
   background-color: pink;
+}
+
+@media (prefers-color-scheme: dark) {
+  #taskAmountInput,
+  #taskNameInput {
+    border: 5px solid rgb(78, 113, 218);
+  }
+
+  #slatespaces {
+    border: 5px solid rgb(78, 113, 218);
+  }
+  .wrapper {
+    border: 5px solid rgb(78, 113, 218);
+  }
 }

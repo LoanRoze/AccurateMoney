@@ -10,6 +10,7 @@ main {
   width: 100px;
   height: 50px;
   border: 5px solid pink;
+  background-color: transparent;
   border-radius: 20px;
   font-weight: bold;
 }
@@ -52,7 +53,7 @@ li {
 
 #clearButton:hover {
   cursor: pointer;
-  background-color: pink;
+  background-color: transparent;
   transform: scale(1.1);
   transition: transform 0.5s ease-in-out;
 }
@@ -64,4 +65,10 @@ li {
 
 #clearButton:active {
   border: 5px solid white;
+}
+
+@media (prefers-color-scheme: dark) {
+  #clearButton {
+    border: 5px solid rgb(78, 113, 218);
+  }
 }

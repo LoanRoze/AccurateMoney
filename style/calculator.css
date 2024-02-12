@@ -46,7 +46,21 @@ textarea {
 
 button:hover,
 .calculator-grid button:nth-child(n + 18):hover {
-  background-color: cadetblue;
+  background-color: pink;
   color: white;
   transition: 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  textarea {
+    background-color: rgb(78, 113, 218);
+  }
+
+  .calculator-grid button:nth-child(n + 18) {
+    background-color: rgb(78, 113, 218);
+  }
+  button:hover,
+  .calculator-grid button:nth-child(n + 18):hover {
+    background-color: rgb(78, 113, 218);
+  }
 }
