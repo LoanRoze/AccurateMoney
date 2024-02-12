@@ -41,6 +41,14 @@ h2 {
   background-size: 100%;
 }
 
+@media screen and (max-width: 480px) {
+  #moneylogo1,
+  #moneylogo2 {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 #moneycount {
   font-style: italic;
   font-size: 40px;
