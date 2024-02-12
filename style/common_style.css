@@ -23,7 +23,7 @@ h2 {
   font-size: 260%;
 }
 
-#logo1 {
+#moneylogo1 {
   display: flex;
   height: 100px;
   width: 100px;
@@ -32,7 +32,7 @@ h2 {
   background-size: 100%;
 }
 
-#logo2 {
+#moneylogo2 {
   display: flex;
   height: 100px;
   width: 100px;
