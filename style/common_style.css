@@ -184,3 +184,13 @@ footer {
   bottom: 0;
   z-index: -1;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: url(../assets/darkmode.jpeg);
+    color: white;
+  }
+  footer {
+    color: white;
+  }
+}

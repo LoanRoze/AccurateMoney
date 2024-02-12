@@ -31,36 +31,48 @@ main {
   font-size: 200%;
 }
 
-#spentButton, #incomeButton, #setButton {
+#spentButton,
+#incomeButton,
+#setButton {
   background-color: white;
   font-size: 20px;
   border-radius: 100px;
   border: 3px solid pink;
 }
 
-#spentButton:hover, #incomeButton:hover, #setButton:hover {
+#spentButton:hover,
+#incomeButton:hover,
+#setButton:hover {
   background-color: pink;
   cursor: pointer;
   transform: scale(1.2);
   transition: transform 0.5s ease-in-out;
 }
 
-#spentButton:not(:hover), #incomeButton:not(:hover), #setButton:not(:hover) {
+#spentButton:not(:hover),
+#incomeButton:not(:hover),
+#setButton:not(:hover) {
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
 }
 
-#spentButton:active, #incomeButton:active, #setButton:active {
+#spentButton:active,
+#incomeButton:active,
+#setButton:active {
   border: 3px solid white;
 }
 
-#spentInput, #incomeInput, #setInput {
+#spentInput,
+#incomeInput,
+#setInput {
   font-size: 50%;
   border: 3px solid pink;
   border-radius: 10px;
 }
 
-#spent, #income, #set {
+#spent,
+#income,
+#set {
   margin-top: 15px;
   font-size: 200%;
 }
@@ -98,4 +110,29 @@ main {
 
 #resetButton:active {
   border: 5px solid white;
+}
+
+@media (prefers-color-scheme: dark) {
+  #spentInput,
+  #incomeInput,
+  #setInput {
+    border: 3px solid rgb(78, 113, 218);
+  }
+  #spentButton,
+  #incomeButton,
+  #setButton {
+    border: 3px solid rgb(78, 113, 218);
+  }
+  #spentButton:hover,
+  #incomeButton:hover,
+  #setButton:hover {
+    background-color: rgb(78, 113, 218);
+  }
+  #resetButton {
+    background-color: white;
+    border: 5px solid rgb(78, 113, 218);
+  }
+  #resetButton:hover {
+    background-color: rgb(78, 113, 218);
+  }
 }
