@@ -20,7 +20,6 @@ function updatePerson() {
   for (let elem = 0; elem < tasksData.length; elem++) {
     const element = tasksData[elem].name;
     if (!personData.includes(element)) personData.push(element);
-    console.log(element in personData);
   }
 }
 
@@ -29,8 +28,8 @@ function updateAmount() {
   for (let elem = 0; elem < tasksData.length; elem++) {
     const element = tasksData[elem].amount;
     amountAfter += Number(element);
-    localStorage.setItem("amountAfter", JSON.stringify(amountAfter));
   }
+  localStorage.setItem("amountAfter", JSON.stringify(amountAfter));
 }
 
 //Fonction qui permet de mettre a jour sur la page
@@ -66,12 +65,10 @@ function updateTaskOnPage() {
     li.appendChild(button);
     //On ajoute tout dans ul
     tasksInPage.appendChild(li);
-    updatePerson();
-    updateAmount();
   }
+  updatePerson();
+  updateAmount();
 }
-
-
 
 //Mise à jour des tasks sur la page
 updateTaskOnPage();
@@ -83,6 +80,13 @@ taskInput1.addEventListener("keydown", (event) => {
 });
 taskInput2.addEventListener("keydown", (event) => {
   if (event.code == "Enter") AddTask();
+});
+resetButton.addEventListener("click", () => {
+  if (confirm("You're about to reset your tasks, are you sure ?")) {
+    tasksData = [];
+    localStorage.setItem("tasks", JSON.stringify(tasksData));
+    updateTaskOnPage();
+  }
 });
 
 function AddTask() {
