@@ -60,12 +60,13 @@ function updateMoney() {
   localStorage.setItem("money", JSON.stringify(moneyData));
   amountInPage.textContent = moneyData[moneyData.length - 1].money;
   localStorage.setItem("amountAfter", JSON.stringify(deptsData));
-  deptsInPage.textContent = deptsData;
   if (deptsData < 0) {
     deptsInPage.style.color = "red";
+    deptsInPage.textContent = deptsData;
   }
   if (deptsData > 0) {
     deptsInPage.style.color = "green";
+    deptsInPage.textContent = "+" + deptsData;
   }
 }
 function updateHistory() {

@@ -43,9 +43,13 @@ function updateTaskOnPage() {
     element = tasksData[index];
     //Création de l'element li dans la liste ul
     let li = document.createElement("li");
+    let name = document.createElement("div");
+    let amount = document.createElement("div");
     //Création du Boutton
     let button = document.createElement("button");
     button.className = "removeButtonTask";
+    name.className = "name";
+    amount.className = "amount";
     //Ajout de la fonction qui supprime l''élément de la liste ul et du array
     button.addEventListener("click", (event) => {
       if (
@@ -58,10 +62,11 @@ function updateTaskOnPage() {
         localStorage.setItem("tasks", JSON.stringify(tasksData));
       }
     });
+    name.textContent = element.name;
+    amount.textContent = element.amount;
     //On ajoute tout dans li
-    li.appendChild(
-      document.createTextNode(element.name + " | " + element.amount)
-    );
+    li.appendChild(name);
+    li.appendChild(amount);
     li.appendChild(button);
     //On ajoute tout dans ul
     tasksInPage.appendChild(li);
