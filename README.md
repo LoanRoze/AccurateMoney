@@ -22,3 +22,5 @@
 ### Colaborateurs :
 - Loan Roze
 - Ryan Valery
+
+*Actuellement en Beta*
