@@ -58,7 +58,7 @@ if (moneyData[moneyData.length - 1].date != Math.floor(Date.now() / 86400000)) {
 //Des fonctions qui mettent a jour les données dans le local storage
 function updateMoney() {
   localStorage.setItem("money", JSON.stringify(moneyData));
-  amountInPage.textContent = moneyData[moneyData.length - 1].money;
+  amountInPage.textContent = Math.round((moneyData[moneyData.length - 1].money) * 100) / 100;
   localStorage.setItem("amountAfter", JSON.stringify(deptsData));
   if (deptsData < 0) {
     deptsInPage.style.color = "red";
