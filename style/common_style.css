@@ -80,6 +80,7 @@ h2 {
   /* Ecran de pc */
   @media screen and (min-width: 480px) {
     body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       background-image: url(../assets/BackgroundDay.png);
     }
   }
@@ -94,6 +95,7 @@ h2 {
   /* Ecran de téléphone : */
   @media screen and (max-width: 480px) {
     body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       background: linear-gradient(
           to right,
           #000046,
@@ -106,6 +108,7 @@ h2 {
   /* Ecran de pc */
   @media screen and (min-width: 480px) {
     body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       background-image: url(../assets/BackgroungNight.jpg);
       color: white;
     }
@@ -127,6 +130,7 @@ footer {
 
 @media screen and (max-width: 480px) {
   footer {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     font-size: 12px;
   }
 }
