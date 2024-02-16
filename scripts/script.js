@@ -68,6 +68,9 @@ function updateMoney() {
     deptsInPage.style.color = "green";
     deptsInPage.textContent = "+" + deptsData;
   }
+  if (deptsData === 0) {
+    deptsInPage.textContent = 0
+  }
 }
 function updateHistory() {
   localStorage.setItem("history", JSON.stringify(historyData));
