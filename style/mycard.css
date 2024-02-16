@@ -11,6 +11,10 @@ main {
   justify-content: center;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 .wrapper {
   display: flex;
   overflow-x: auto;
