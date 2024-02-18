@@ -34,7 +34,7 @@ function updateHistoryOnPage() {
     });
     //Mise a jour du texte contenu dans chaque div
     message.textContent = element.message;
-    moneyChange.textContent = element.moneyChange;
+    moneyChange.textContent = Math.round(element.moneyChange * 100) / 100;
     date.textContent = element.date;
 
     //On ajoute tout dans li

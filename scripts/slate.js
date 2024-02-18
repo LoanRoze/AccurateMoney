@@ -63,7 +63,7 @@ function updateTaskOnPage() {
       }
     });
     name.textContent = element.name;
-    amount.textContent = element.amount;
+    amount.textContent = Math.round(element.amount * 100) / 100;
     //On ajoute tout dans li
     li.appendChild(name);
     li.appendChild(amount);
@@ -112,7 +112,7 @@ function AddTask() {
         //On trouve la personne et on met a jour la data
         if (taskInput1.value === element)
           tasksData[eleme].amount =
-            Number(tasksData[eleme].amount) + parseInt(taskInput2.value);
+            Number(tasksData[eleme].amount) + parseFloat(taskInput2.value);
       }
       //Sinon on créait la personne
     } else {
