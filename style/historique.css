@@ -9,7 +9,7 @@ main {
   margin-top: 50px;
   width: 100px;
   height: 50px;
-  border: 5px solid pink;
+  border: 5px solid var(--color-of-border);
   background-color: transparent;
   border-radius: 20px;
   font-weight: bold;
@@ -51,6 +51,9 @@ li {
   margin-right: 32px;
 }
 
+#clearButton {
+  color: var(--color-of-text);
+}
 #clearButton:hover {
   cursor: pointer;
   background-color: transparent;
@@ -67,8 +70,3 @@ li {
   border: 5px solid white;
 }
 
-@media (prefers-color-scheme: dark) {
-  #clearButton {
-    border: 5px solid rgb(78, 113, 218);
-  }
-}
