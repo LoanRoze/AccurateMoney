@@ -59,32 +59,21 @@ h2 {
 
 /*Theme clair*/
 @media (prefers-color-scheme: light) {
-  /* Ecran de téléphone : */
-  @media screen and (max-width: 480px) {
-    body {
-      color: black;
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-      background-size: auto;
-      background-attachment: fixed;
-      background: linear-gradient(
-        90deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(198, 150, 201, 1) 0%,
-        rgba(192, 152, 203, 1) 37%,
-        rgba(212, 134, 233, 1) 47%,
-        rgba(153, 216, 235, 1) 78%,
-        rgba(216, 244, 250, 1) 100%
-        );
-    }
+  body {
+    color: black;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-size: auto;
+    background-attachment: fixed;
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(198, 150, 201, 1) 0%,
+      rgba(192, 152, 203, 1) 37%,
+      rgba(212, 134, 233, 1) 47%,
+      rgba(153, 216, 235, 1) 78%,
+      rgba(216, 244, 250, 1) 100%
+      );
   }
-  /* Ecran de pc */
-  @media screen and (min-width: 480px) {
-    body {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-      background-image: url(../assets/BackgroundDay.png);
-    }
-  }
-
   footer {
     color: black;
   }
@@ -92,28 +81,15 @@ h2 {
 
 /*Theme sombre*/
 @media (prefers-color-scheme: dark) {
-  /* Ecran de téléphone : */
-  @media screen and (max-width: 480px) {
-    body {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-      background: linear-gradient(
-          to right,
-          #000046,
-          #1cb5e0
-        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      color: white;
-    }
+  body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background: linear-gradient(
+        to right,
+        #000046,
+        #1cb5e0
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
   }
-
-  /* Ecran de pc */
-  @media screen and (min-width: 480px) {
-    body {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-      background-image: url(../assets/BackgroungNight.jpg);
-      color: white;
-    }
-  }
-
   footer {
     color: white;
   }
