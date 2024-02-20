@@ -60,6 +60,8 @@ function updateTaskOnPage() {
         event.target.parentNode.remove();
         tasksData.splice(index, 1);
         localStorage.setItem("tasks", JSON.stringify(tasksData));
+        updatePerson();
+        updateAmount();
       }
     });
     name.textContent = element.name;
