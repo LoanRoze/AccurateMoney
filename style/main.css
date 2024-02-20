@@ -1,3 +1,5 @@
+
+
 main {
   display: flex;
   justify-content: center;
@@ -37,13 +39,13 @@ main {
   background-color: white;
   font-size: 20px;
   border-radius: 100px;
-  border: 3px solid pink;
+  border: 3px solid var(--color-of-border);
 }
 
 #spentButton:hover,
 #incomeButton:hover,
 #setButton:hover {
-  background-color: pink;
+  background-color: var(--color-of-border);
   cursor: pointer;
   transform: scale(1.2);
   transition: transform 0.5s ease-in-out;
@@ -66,7 +68,7 @@ main {
 #incomeInput,
 #setInput {
   font-size: 50%;
-  border: 3px solid pink;
+  border: 3px solid var(--color-of-border);
   border-radius: 10px;
 }
 
@@ -86,12 +88,13 @@ main {
 }
 
 #resetButton {
+  color: var(--color-of-text);
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   border-radius: 20px;
-  border: 5px solid pink;
+  border: 5px solid var(--color-of-border);
   width: 100px;
   height: 50px;
   background-color: transparent;
@@ -110,27 +113,4 @@ main {
 
 #resetButton:active {
   border: 5px solid white;
-}
-
-@media (prefers-color-scheme: dark) {
-  #spentInput,
-  #incomeInput,
-  #setInput {
-    border: 3px solid rgb(78, 113, 218);
-  }
-  #spentButton,
-  #incomeButton,
-  #setButton {
-    border: 3px solid rgb(78, 113, 218);
-  }
-  #spentButton:hover,
-  #incomeButton:hover,
-  #setButton:hover {
-    background-color: rgb(78, 113, 218);
-  }
-  #resetButton {
-    background-color: transparent;
-    color: white;
-    border: 5px solid rgb(78, 113, 218);
-  }
 }

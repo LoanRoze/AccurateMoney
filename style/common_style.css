@@ -1,3 +1,15 @@
+:root {
+  --color-of-border : pink;
+  --color-of-text : black;
+}
+
+#themeButton {
+  width: 5%;
+  position: fixed;
+  top : 1%;
+  right : 1%;
+}
+
 /* Head part */
 header {
   display: flex;
@@ -56,43 +68,8 @@ h2 {
 }
 
 /* body part */
-
-/*Theme clair*/
-@media (prefers-color-scheme: light) {
-  body {
-    color: black;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    background-size: auto;
-    background-attachment: fixed;
-    background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(198, 150, 201, 1) 0%,
-      rgba(192, 152, 203, 1) 37%,
-      rgba(212, 134, 233, 1) 47%,
-      rgba(153, 216, 235, 1) 78%,
-      rgba(216, 244, 250, 1) 100%
-      );
-  }
-  footer {
-    color: black;
-  }
-}
-
-/*Theme sombre*/
-@media (prefers-color-scheme: dark) {
-  body {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    background: linear-gradient(
-        to right,
-        #000046,
-        #1cb5e0
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: white;
-  }
-  footer {
-    color: white;
-  }
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 /* foot part */

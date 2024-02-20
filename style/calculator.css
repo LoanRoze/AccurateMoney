@@ -35,32 +35,18 @@ textarea {
   grid-column: span 4;
   font-size: 25px;
   text-align: end;
-  background-color: pink;
+  background-color: var(--color-of-border);
   padding: 5px;
   border: none;
 }
 
 .calculator-grid button:nth-child(n + 18) {
-  background-color: pink;
+  background-color: var(--color-of-border);
 }
 
 button:hover,
 .calculator-grid button:nth-child(n + 18):hover {
-  background-color: pink;
+  background-color: var(--color-of-border);
   color: white;
   transition: 0.2s;
-}
-
-@media (prefers-color-scheme: dark) {
-  textarea {
-    background-color: rgb(78, 113, 218);
-  }
-
-  .calculator-grid button:nth-child(n + 18) {
-    background-color: rgb(78, 113, 218);
-  }
-  button:hover,
-  .calculator-grid button:nth-child(n + 18):hover {
-    background-color: rgb(78, 113, 218);
-  }
 }
