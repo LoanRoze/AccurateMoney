@@ -35,7 +35,7 @@ updateMoney();
 
 
 //On verifie si ça fait plus d'un jour que la derniere connexion au site s'est fait
-if (moneyData[moneyData.length - 1].date != Math.floor(Date.now() / 86400000)) {
+if (moneyData[moneyData.length - 1].day != new Date().toLocaleString('fr-FR',{weekday: 'long'})) {
   //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
   moneyData.push({
     day: new Date().toLocaleString('fr-FR',{
