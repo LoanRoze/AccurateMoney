@@ -14,10 +14,15 @@ function createGraphWeek() {
   average = 0
   moneyList = []
   daysList = []
-  for (let index = 1; index < 8; index++) {
-    moneyList.push(data[data.length - 8 + index].money);
-    daysList.push(data[data.length - 8 + index].day);
-    average += data[data.length - 8 + index].money
+  if (data.length >= 7) {
+    for (let index = 1; index < 8; index++) {
+      moneyList.push(data[data.length - 8 + index].money);
+      daysList.push(data[data.length - 8 + index].day);
+      average += data[data.length - 8 + index].money
+    }
+  }
+  else {
+      importEveryValuesOfList()
   }
   average = average / 7
   textSpace.textContent = "Last 7 Days"
@@ -29,10 +34,17 @@ function createGraph30Days() {
   average = 0
   moneyList = []
   daysList = []
-  for (let index = 1; index < 31; index++) {
-    moneyList.push(data[data.length - 31 + index].money);
-    daysList.push(data[data.length - 31 + index].date);
-    average += data[data.length - 31 + index].money
+  if (data.length >= 30) {
+    for (let index = 1; index < 31; index++) {
+      if (index > data.length) {
+        moneyList.push(data[data.length - 31 + index].money);
+        daysList.push(data[data.length - 31 + index].date);
+        average += data[data.length - 31 + index].money
+      }
+    }
+  }
+  else {
+    importEveryValuesOfList()
   }
   average = average / 30
   textSpace.textContent = "Last 30 Days"
@@ -46,11 +58,11 @@ function createGaphMonth() {
   daysList = []
   let currentMonth = data[data.length - 1].month;
   let valuesAmount = 0
-  for (let index = 1; index < 31; index++) {
-    if (data[data.length - 31 + index].month == currentMonth) {
-      moneyList.push(data[data.length - 31 + index].money);
-      daysList.push(data[data.length - 31 + index].date);
-      average += data[data.length - 31 + index].money
+  for (let index = 0; index < data.length; index++) {
+    if (data[index].month == currentMonth) {
+      moneyList.push(data[index].money);
+      daysList.push(data[index].date);
+      average += data[index].money
       valuesAmount += 1
     }
   }
@@ -58,6 +70,13 @@ function createGaphMonth() {
   textSpace.textContent = "This Month"
   averageSpace.textContent = Math.round((average) * 100) / 100;
   createGraph(canva, moneyList, daysList);
+}
+
+function importEveryValuesOfList() {
+  for (let index = 0; index < data.length; index++) {
+    moneyList.push(data[index].money);
+    daysList.push(data[index].day);
+  }
 }
 
 createGraphWeek()
