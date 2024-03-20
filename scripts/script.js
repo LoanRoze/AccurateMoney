@@ -17,22 +17,12 @@ const regEx2 = "s*";
 let moneyData = JSON.parse(localStorage.getItem("money"));
 let historyData = JSON.parse(localStorage.getItem("history"));
 let deptsData = JSON.parse(localStorage.getItem("amountAfter"));
-let currentVersion = 2;
+let currentVersion = 3;
 
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
 if (moneyData === null || moneyData[0].version != currentVersion) {
-  moneyData = [
-    {
-      day: new Date().toLocaleDateString(),
-      date: Math.floor(Date.now() / 86400000),
-      money: 0,
-      version: currentVersion,
-    },
-  ];
+  resetMoney()
 }
-
-//On met a jour en chargeant la page
-updateMoney();
 
 //De meme pour l'historique
 if (historyData === null) {
@@ -40,17 +30,30 @@ if (historyData === null) {
   updateHistory();
 }
 
+//On met a jour en chargeant la page
+updateMoney();
+
+
 //On verifie si ça fait plus d'un jour que la derniere connexion au site s'est fait
 if (moneyData[moneyData.length - 1].date != Math.floor(Date.now() / 86400000)) {
   //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
   moneyData.push({
-    day: new Date().toLocaleDateString(),
-    date: Math.floor(Date.now() / 86400000),
+    day: new Date().toLocaleString('fr-FR',{
+      weekday: 'long'
+    }),
+    date: new Date().toLocaleString('fr-FR',{
+      day: 'numeric',
+      month: 'short',
+      year: '2-digit'
+    }),
+    month: new Date().toLocaleString('fr-FR',{
+      month: 'numeric'
+    }), 
     money: moneyData[moneyData.length - 1].money,
     version: currentVersion,
   });
-  //On supprime le json d'il y a 8 jours si besoin
-  if (moneyData.length > 8) {
+  //On supprime le json d'il y a 32 jours si besoin (pour eviter trop de valeurs dans le cache)
+  if (moneyData.length > 32) {
     moneyData.shift();
   }
 }
@@ -72,8 +75,29 @@ function updateMoney() {
     deptsInPage.textContent = 0
   }
 }
+
 function updateHistory() {
   localStorage.setItem("history", JSON.stringify(historyData));
+}
+
+function resetMoney() {
+  moneyData = [
+    {
+      day: new Date().toLocaleString('fr-FR',{
+        weekday: 'long'
+      }),
+      date: new Date().toLocaleString('fr-FR',{
+        day: 'numeric',
+        month: 'short',
+        year: '2-digit'
+      }),
+      month: new Date().toLocaleString('fr-FR',{
+        month: 'numeric'
+      }),
+      money: 0,
+      version: currentVersion
+    },
+  ];
 }
 
 //Les fonctions qu'on appelle quand on appuie sur les boutons
@@ -174,14 +198,7 @@ resetButton.addEventListener("click", () => {
   if (
     confirm("You're about to entirely reset your money and the datas related")
   ) {
-    moneyData = [
-      {
-        day: new Date().toLocaleDateString(),
-        date: Math.floor(Date.now() / 86400000),
-        money: 0,
-        version: currentVersion,
-      },
-    ];
+    resetMoney()
     historyData = [];
     localStorage.setItem("tasks", JSON.stringify([]));
     deptsData = 0;
