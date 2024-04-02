@@ -1,75 +1,74 @@
 const data = JSON.parse(localStorage.getItem("money"));
 const canva = document.getElementById("canvas");
-const changeButton = document.getElementById("changeButton")
-const averageSpace = document.getElementById("averageAmount")
-const textSpace = document.getElementById("textSpace")
+const changeButton = document.getElementById("changeButton");
+const averageSpace = document.getElementById("averageAmount");
+const textSpace = document.getElementById("textSpace");
 let moneyList = [];
 let daysList = [];
-let average = 0
-let currentGraphSelection = 0
-let graph = undefined
+let average = 0;
+let currentGraphSelection = 0;
+let graph = undefined;
 
-
+//Fonctions qui font les listes de money/days 
 function createGraphWeek() {
-  average = 0
-  moneyList = []
-  daysList = []
-  if (data.length >= 7) {
-    for (let index = 1; index < 8; index++) {
-      moneyList.push(data[data.length - 8 + index].money);
-      daysList.push(data[data.length - 8 + index].day);
-      average += data[data.length - 8 + index].money
-    }
-  }
-  else {
-      importEveryValuesOfList()
-  }
-  average = average / 7
-  textSpace.textContent = "Last 7 Days"
-  averageSpace.textContent = Math.round((average) * 100) / 100;
+  createListOfXDays(7, true);
+  average = calculateAverageSpent(moneyList);
+  textSpace.textContent = "Last 7 Days";
+  averageSpace.textContent = Math.round(average * 100) / 100 + "€";
   createGraph(canva, moneyList, daysList);
 }
 
 function createGraph30Days() {
-  average = 0
-  moneyList = []
-  daysList = []
-  if (data.length >= 30) {
-    for (let index = 1; index < 31; index++) {
-      if (index > data.length) {
-        moneyList.push(data[data.length - 31 + index].money);
-        daysList.push(data[data.length - 31 + index].date);
-        average += data[data.length - 31 + index].money
-      }
-    }
-  }
-  else {
-    importEveryValuesOfList()
-  }
-  average = average / 30
-  textSpace.textContent = "Last 30 Days"
-  averageSpace.textContent = Math.round((average) * 100) / 100;
+  createListOfXDays(30, false);
+  average = calculateAverageSpent(moneyList);
+  textSpace.textContent = "Last 30 Days";
+  averageSpace.textContent = Math.round(average * 100) / 100 + "€";
   createGraph(canva, moneyList, daysList);
 }
 
 function createGaphMonth() {
-  average = 0
-  moneyList = []
-  daysList = []
+  moneyList = [];
+  daysList = [];
   let currentMonth = data[data.length - 1].month;
-  let valuesAmount = 0
   for (let index = 0; index < data.length; index++) {
     if (data[index].month == currentMonth) {
       moneyList.push(data[index].money);
       daysList.push(data[index].date);
-      average += data[index].money
-      valuesAmount += 1
     }
   }
-  average = average / valuesAmount;
-  textSpace.textContent = "This Month"
-  averageSpace.textContent = Math.round((average) * 100) / 100;
+  average = calculateAverageSpent(moneyList);
+  textSpace.textContent = "This Month";
+  averageSpace.textContent = Math.round(average * 100) / 100 + "€";
   createGraph(canva, moneyList, daysList);
+}
+
+function calculateAverageSpent(moneyList) {
+  let average = 0;
+  let lastValue = moneyList[0];
+  for (let moneyIndex = 0; moneyIndex < moneyList.length; moneyIndex++) {
+    const element = moneyList[moneyIndex];
+    if (moneyIndex != 1) {
+      average += element - lastValue;
+      lastValue = element;
+    }
+  }
+  return average / (moneyList.length - 1);
+}
+
+function createListOfXDays(x, days) {
+  moneyList = [];
+  daysList = [];
+  if (data.length >= x) {
+    for (let index = 1; index < x + 1; index++) {
+      if (index < data.length) {
+        moneyList.push(data[data.length - (x + 1) + index].money);
+        if (days) daysList.push(data[data.length - (x + 1) + index].day);
+        else daysList.push(data[data.length - (x + 1) + index].date)
+      }
+    }
+  } else {
+    importEveryValuesOfList();
+  }
 }
 
 function importEveryValuesOfList() {
@@ -79,16 +78,16 @@ function importEveryValuesOfList() {
   }
 }
 
-createGraphWeek()
+createGraphWeek();
 
 changeButton.addEventListener("click", () => {
-  if (currentGraphSelection == 2) currentGraphSelection = 0
-  else (currentGraphSelection += 1)
-  if (graph != undefined) graph.destroy()
-  if (currentGraphSelection == 0) createGraphWeek()
-  if (currentGraphSelection == 1) createGaphMonth()
-  if (currentGraphSelection == 2) createGraph30Days()
-})
+  if (currentGraphSelection == 2) currentGraphSelection = 0;
+  else currentGraphSelection += 1;
+  if (graph != undefined) graph.destroy();
+  if (currentGraphSelection == 0) createGraphWeek();
+  if (currentGraphSelection == 1) createGaphMonth();
+  if (currentGraphSelection == 2) createGraph30Days();
+});
 
 function createGraph(obj, data, values) {
   obj.innerHTML = "";
@@ -129,6 +128,7 @@ function createGraph(obj, data, values) {
             },
             ticks: {
               fontColor: "#2b2a27",
+              stepSize: 50, // <---- ICI POUR REGLER LA TAILLE ENTRE LES LIGNES
             },
           },
         ],
@@ -136,4 +136,3 @@ function createGraph(obj, data, values) {
     },
   });
 }
-

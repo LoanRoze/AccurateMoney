@@ -18,10 +18,11 @@ let moneyData = JSON.parse(localStorage.getItem("money"));
 let historyData = JSON.parse(localStorage.getItem("history"));
 let deptsData = JSON.parse(localStorage.getItem("amountAfter"));
 let currentVersion = 3;
+let testMode = false;
 
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
 if (moneyData === null || moneyData[0].version != currentVersion) {
-  resetMoney()
+  resetMoney();
 }
 
 //De meme pour l'historique
@@ -30,25 +31,24 @@ if (historyData === null) {
   updateHistory();
 }
 
-//On met a jour en chargeant la page
-updateMoney();
-
-
 //On verifie si ça fait plus d'un jour que la derniere connexion au site s'est fait
-if (moneyData[moneyData.length - 1].day != new Date().toLocaleString('fr-FR',{weekday: 'long'})) {
+if (
+  moneyData[moneyData.length - 1].day !=
+  new Date().toLocaleString("fr-FR", { weekday: "long" })
+) {
   //On ajoute un json a la liste avec la date actuelle et l'argent du dernier jour
   moneyData.push({
-    day: new Date().toLocaleString('fr-FR',{
-      weekday: 'long'
+    day: new Date().toLocaleString("fr-FR", {
+      weekday: "long",
     }),
-    date: new Date().toLocaleString('fr-FR',{
-      day: 'numeric',
-      month: 'short',
-      year: '2-digit'
+    date: new Date().toLocaleString("fr-FR", {
+      day: "numeric",
+      month: "short",
+      year: "2-digit",
     }),
-    month: new Date().toLocaleString('fr-FR',{
-      month: 'numeric'
-    }), 
+    month: new Date().toLocaleString("fr-FR", {
+      month: "numeric",
+    }),
     money: moneyData[moneyData.length - 1].money,
     version: currentVersion,
   });
@@ -58,10 +58,14 @@ if (moneyData[moneyData.length - 1].day != new Date().toLocaleString('fr-FR',{we
   }
 }
 
+//On met a jour en chargeant la page
+updateMoney();
+
 //Des fonctions qui mettent a jour les données dans le local storage
 function updateMoney() {
   localStorage.setItem("money", JSON.stringify(moneyData));
-  amountInPage.textContent = Math.round((moneyData[moneyData.length - 1].money) * 100) / 100;
+  amountInPage.textContent =
+    Math.round(moneyData[moneyData.length - 1].money * 100) / 100;
   localStorage.setItem("amountAfter", JSON.stringify(deptsData));
   if (deptsData < 0) {
     deptsInPage.style.color = "red";
@@ -72,7 +76,7 @@ function updateMoney() {
     deptsInPage.textContent = "+" + deptsData;
   }
   if (deptsData === 0) {
-    deptsInPage.textContent = 0
+    deptsInPage.textContent = 0;
   }
 }
 
@@ -83,19 +87,19 @@ function updateHistory() {
 function resetMoney() {
   moneyData = [
     {
-      day: new Date().toLocaleString('fr-FR',{
-        weekday: 'long'
+      day: new Date().toLocaleString("fr-FR", {
+        weekday: "long",
       }),
-      date: new Date().toLocaleString('fr-FR',{
-        day: 'numeric',
-        month: 'short',
-        year: '2-digit'
+      date: new Date().toLocaleString("fr-FR", {
+        day: "numeric",
+        month: "short",
+        year: "2-digit",
       }),
-      month: new Date().toLocaleString('fr-FR',{
-        month: 'numeric'
+      month: new Date().toLocaleString("fr-FR", {
+        month: "numeric",
       }),
       money: 0,
-      version: currentVersion
+      version: currentVersion,
     },
   ];
 }
@@ -198,7 +202,7 @@ resetButton.addEventListener("click", () => {
   if (
     confirm("You're about to entirely reset your money and the datas related")
   ) {
-    resetMoney()
+    resetMoney();
     historyData = [];
     localStorage.setItem("tasks", JSON.stringify([]));
     deptsData = 0;
@@ -206,3 +210,226 @@ resetButton.addEventListener("click", () => {
     updateMoney();
   }
 });
+
+// if (testMode) {
+//   moneyData = [
+//     {
+//       day: "lundi",
+//       date: "2 avr. 24",
+//       month: "4",
+//       money: 204,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mardi",
+//       date: "3 avr. 24",
+//       month: "4",
+//       money: 290,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mercredi",
+//       date: "4 avr. 24",
+//       month: "4",
+//       money: 280,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "jeudi",
+//       date: "5 avr. 24",
+//       month: "4",
+//       money: 160,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "vendredi",
+//       date: "6 avr. 24",
+//       month: "4",
+//       money: 130,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "samedi",
+//       date: "7 avr. 24",
+//       month: "4",
+//       money: 160,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "dimanche",
+//       date: "8 avr. 24",
+//       month: "4",
+//       money: 30,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "lundi",
+//       date: "9 avr. 24",
+//       month: "4",
+//       money: 30,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mardi",
+//       date: "10 avr. 24",
+//       month: "4",
+//       money: 20,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mercredi",
+//       date: "11 avr. 24",
+//       month: "4",
+//       money: 10,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "jeudi",
+//       date: "12 avr. 24",
+//       month: "4",
+//       money: 0,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "vendredi",
+//       date: "13 avr. 24",
+//       month: "4",
+//       money: 100,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "samedi",
+//       date: "14 avr. 24",
+//       month: "4",
+//       money: 50,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "dimanche",
+//       date: "15 avr. 24",
+//       month: "4",
+//       money: 40,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "lundi",
+//       date: "16 avr. 24",
+//       month: "4",
+//       money: 30,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mercredi",
+//       date: "18 avr. 24",
+//       month: "4",
+//       money: 20,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "jeudi",
+//       date: "19 avr. 24",
+//       month: "4",
+//       money: 10,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "vendredi",
+//       date: "20 avr. 24",
+//       month: "4",
+//       money: 1000,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "samedi",
+//       date: "21 avr. 24",
+//       month: "4",
+//       money: 560,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "dimanche",
+//       date: "22 avr. 24",
+//       month: "4",
+//       money: 340,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "lundi",
+//       date: "23 avr. 24",
+//       month: "4",
+//       money: 240,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mardi",
+//       date: "24 avr. 24",
+//       month: "4",
+//       money: 260,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mercredi",
+//       date: "25 avr. 24",
+//       month: "4",
+//       money: 260,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "jeudi",
+//       date: "26 avr. 24",
+//       month: "4",
+//       money: 140,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "vendredi",
+//       date: "27 avr. 24",
+//       month: "4",
+//       money: 130,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "samedi",
+//       date: "28 avr. 24",
+//       month: "4",
+//       money: 120,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "dimanche",
+//       date: "29 avr. 24",
+//       month: "4",
+//       money: 10,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "lundi",
+//       date: "30 avr. 24",
+//       month: "4",
+//       money: 60,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mardi",
+//       date: "1 mai. 24",
+//       month: "5",
+//       money: 200,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "mercredi",
+//       date: "2 mai. 24",
+//       month: "5",
+//       money: 150,
+//       version: currentVersion,
+//     },
+//     {
+//       day: "jeudi",
+//       date: "3 mai. 24",
+//       month: "5",
+//       money: 100,
+//       version: currentVersion,
+//     },
+//   ];
+//   updateMoney();
+// }
