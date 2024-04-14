@@ -25,6 +25,38 @@ main {
   border-radius: 10px;
 }
 
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+ul {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  min-width: 105%;
+  min-height: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  min-width: 100%;
+}
+
+.removeButtonTask {
+  background: transparent;
+  background-image: url(../assets/suppr.png);
+  background-position: center;
+  background-size: 100%;
+  max-height: 15px;
+  min-height: 15px;
+}
+
+.removeButtonTask:hover {
+  cursor: pointer;
+}
+
 #tasks {
   display: flex;
   flex-direction: column;
@@ -66,3 +98,14 @@ main {
   background-color: var(--color-of-border);
 }
 
+#resetButton {
+  background-color: white;
+  font-size: 20px;
+  border-radius: 100px;
+  border: 2px solid var(--color-of-border);
+}
+
+#resetButton:hover {
+  animation: grossissement 0.3s forwards;
+  background-color: var(--color-of-border);
+}
