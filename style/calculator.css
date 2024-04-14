@@ -50,3 +50,8 @@ button:hover,
   color: white;
   transition: 0.2s;
 }
+
+#themeButtonspace {
+  display: flex;
+  justify-content: center;
+}

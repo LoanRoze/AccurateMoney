@@ -4,10 +4,12 @@
 }
 
 #themeButton {
-  width: 5%;
-  position: fixed;
-  top : 1%;
-  right : 1%;
+  margin-top: 50px;
+  width: 3%;
+}
+
+#themeButton:hover {
+  cursor: pointer;
 }
 
 /* Head part */

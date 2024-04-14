@@ -68,3 +68,8 @@ main {
   border-radius: 10px;
   transform: rotateY(180deg);
 }
+
+#themeButtonspace {
+  display: flex;
+  justify-content: center;
+}
