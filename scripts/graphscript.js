@@ -32,7 +32,7 @@ function createGaphMonth() {
   let currentMonth = data[data.length - 1].month;
   for (let index = 0; index < data.length; index++) {
     if (data[index].month == currentMonth) {
-      moneyList.push(data[index].money);
+      moneyList.push(Math.round(data[index].money * 100) / 100);
       daysList.push(data[index].date);
     }
   }
@@ -61,7 +61,7 @@ function createListOfXDays(x, days) {
   if (data.length >= x) {
     for (let index = 1; index < x + 1; index++) {
       if (index < data.length) {
-        moneyList.push(data[data.length - (x + 1) + index].money);
+        moneyList.push(Math.round(data[data.length - (x + 1) + index].money * 100) / 100);
         if (days) daysList.push(data[data.length - (x + 1) + index].day);
         else daysList.push(data[data.length - (x + 1) + index].date)
       }
@@ -73,7 +73,7 @@ function createListOfXDays(x, days) {
 
 function importEveryValuesOfList() {
   for (let index = 0; index < data.length; index++) {
-    moneyList.push(data[index].money);
+    moneyList.push(Math.round(data[index].money * 100) / 100);
     daysList.push(data[index].day);
   }
 }
