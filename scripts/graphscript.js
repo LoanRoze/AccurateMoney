@@ -128,7 +128,7 @@ function createGraph(obj, data, values) {
             },
             ticks: {
               fontColor: "#2b2a27",
-              stepSize: 50, // <---- ICI POUR REGLER LA TAILLE ENTRE LES LIGNES
+              // stepSize: 50, // <---- ICI POUR REGLER LA TAILLE ENTRE LES LIGNES
             },
           },
         ],
