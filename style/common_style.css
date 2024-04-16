@@ -1,11 +1,16 @@
+body {
+  margin: 0;
+  max-height: 100vh;
+}
+
 :root {
   --color-of-border : pink;
   --color-of-text : black;
 }
 
 #themeButton {
-  margin-top: 50px;
-  width: 3%;
+  margin-top: 20px;
+  width: 50px;
 }
 
 #themeButton:hover {
@@ -78,7 +83,7 @@ body {
 footer {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 20px;
   height: 100px;
   font-weight: bold;
 }

@@ -49,16 +49,23 @@ main {
   width: 0;
 }
 
+.item {
+  display: flex;
+  width: 100%;
+}
+
 ul {
   display: flex;
   justify-content: start;
   flex-direction: column;
-  min-width: 105%;
+  min-width: 100%;
   min-height: 100%;
+  padding: 0;
 }
 
 li {
   display: flex;
+  align-items: center;
   justify-content: space-around;
   margin-top: 10px;
   min-width: 100%;
@@ -96,3 +103,6 @@ li {
   border: 5px solid white;
 }
 
+.message {
+  max-width: 70px;
+}
