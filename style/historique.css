@@ -36,8 +36,8 @@ main {
 .wrapper {
   display: flex;
   overflow-x: auto;
-  max-height: 300px;
-  min-height: 300px;
+  max-height: 250px;
+  min-height: 250px;
   max-width: 300px;
   min-width: 300px;
   margin-top: 30px;
