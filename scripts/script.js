@@ -18,7 +18,7 @@ let moneyData = JSON.parse(localStorage.getItem("money"));
 let historyData = JSON.parse(localStorage.getItem("history"));
 let deptsData = JSON.parse(localStorage.getItem("amountAfter"));
 let currentVersion = 3;
-let testMode = false;
+let testMode = false ;
 
 //On verifie si c'est la premiere connexion au site pour le pc, si c'est le cas on initialise moneyData
 if (moneyData === null || moneyData[0].version != currentVersion) {
